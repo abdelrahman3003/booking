@@ -1,3 +1,4 @@
+import 'package:booking/view/workspaces.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,8 +12,8 @@ class Booking extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return MaterialApp(
-              debugShowCheckedModeBanner: false, home: Container());
+          return const MaterialApp(
+              debugShowCheckedModeBanner: false, home: Workspaces());
         });
   }
 }
