@@ -1,10 +1,20 @@
+import 'dart:math';
+
 import 'package:booking/view/widget/workspace_item_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WorkspaceItem extends StatelessWidget {
-  const WorkspaceItem({super.key});
-
+  const WorkspaceItem(
+      {super.key,
+      required this.name,
+      required this.location,
+      required this.capacity,
+      required this.amentities});
+  final String name;
+  final String location;
+  final int capacity;
+  final String amentities;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,14 +27,13 @@ class WorkspaceItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Workspace 1",
+            name,
             style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 3.h),
-          const WorkspaceItemRow(title: "location", value: "Cairo"),
-          const WorkspaceItemRow(title: "Capcity", value: "24"),
-          const WorkspaceItemRow(
-              title: "Amenities", value: "Wi-Fi , playstaion"),
+          WorkspaceItemRow(title: "location", value: location),
+          WorkspaceItemRow(title: "Capcity", value: "$capacity"),
+          WorkspaceItemRow(title: "Amenities", value: amentities),
         ],
       ),
     );
