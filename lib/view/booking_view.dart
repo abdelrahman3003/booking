@@ -1,6 +1,6 @@
 import 'package:booking/controller/worksapce/workspace_cubit.dart';
-import 'package:booking/view/confirm_booking_view.dart';
-import 'package:booking/view/widget/app_button.dart';
+import 'package:booking/view/booking_details.dart';
+import 'package:booking/view/widget/workspaces_view/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,11 +16,6 @@ class _BookingViewState extends State<BookingView> {
   @override
   Widget build(BuildContext context) {
     var cubit = context.read<WorkspaceCubit>();
-    final List<String> timeSlots = [
-      '9:00 AM - 11:00 AM',
-      '12:00 PM - 2:00 PM',
-      '3:00 PM - 5:00 PM'
-    ];
 
     return Scaffold(
       appBar: AppBar(
@@ -62,7 +57,7 @@ class _BookingViewState extends State<BookingView> {
               hint: Text(
                 cubit.timeSlot ?? 'Choose Time Slot',
               ),
-              items: timeSlots.map((String slot) {
+              items: cubit.timeSlots.map((String slot) {
                 return DropdownMenuItem<String>(
                   value: slot,
                   child: Text(slot),
@@ -86,7 +81,7 @@ class _BookingViewState extends State<BookingView> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const ConfirmBookingView(),
+                        builder: (context) => const BookingDetails(),
                       ));
                 }
               },

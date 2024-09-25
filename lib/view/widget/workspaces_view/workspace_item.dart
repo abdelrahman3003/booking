@@ -1,8 +1,7 @@
-import 'package:booking/booking.dart';
 import 'package:booking/controller/worksapce/workspace_cubit.dart';
 import 'package:booking/data/model/workspace_model.dart';
 import 'package:booking/view/booking_view.dart';
-import 'package:booking/view/widget/workspace_item_row.dart';
+import 'package:booking/view/widget/workspaces_view/workspace_item_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

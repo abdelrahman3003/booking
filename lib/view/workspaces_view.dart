@@ -1,5 +1,6 @@
 import 'package:booking/controller/worksapce/workspace_cubit.dart';
-import 'package:booking/view/widget/workspace_list_item.dart';
+import 'package:booking/view/widget/workspaces_view/app_appbar.dart';
+import 'package:booking/view/widget/workspaces_view/workspace_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,13 +11,9 @@ class WorkspacesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Workspaces",
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w600),
-          ),
-          centerTitle: true,
-        ),
+        appBar: PreferredSize(
+            preferredSize: Size(double.infinity, 50.h),
+            child: const MyAppBar(title: "WorkSpaces")),
         body: BlocBuilder<WorkspaceCubit, WorkspaceState>(
             builder: (context, state) {
           if (state is WorkspaceSuccess) {

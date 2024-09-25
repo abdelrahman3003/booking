@@ -1,4 +1,3 @@
-import 'package:booking/data/model/workspace_model.dart';
 
 class WorkspaceData {
  static List<String> locations = [
