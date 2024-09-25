@@ -2,8 +2,8 @@ import 'package:booking/view/widget/workspace_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Workspaces extends StatelessWidget {
-  const Workspaces({super.key});
+class WorkspacesView extends StatelessWidget {
+  const WorkspacesView({super.key});
 
   @override
   Widget build(BuildContext context) {
