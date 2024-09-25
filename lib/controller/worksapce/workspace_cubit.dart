@@ -11,6 +11,9 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
     fetchData();
   }
   List<WorkspaceModel> workspaceList = [];
+  WorkspaceModel? workspaceModel;
+  String? pickedDate;
+  String? timeSlot;
   fetchData() async {
     emit(WorkspaceLoading());
     await Future.delayed(const Duration(seconds: 2));
@@ -21,8 +24,14 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
           capacity: i + 3,
           amenities: WorkspaceData.amenities));
     }
-    print("=================== lemght  ${workspaceList.length}");
-    print("=================== nameeee  ${workspaceList[0].name}");
     emit(WorkspaceSuccess(workspaceList: workspaceList));
+  }
+
+  @override
+  Future<void> close() {
+    pickedDate = null;
+    timeSlot = null;
+    workspaceModel = null;
+    return super.close();
   }
 }

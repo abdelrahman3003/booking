@@ -15,10 +15,8 @@ class WorkspaceListItem extends StatelessWidget {
             itemCount: workspaceList.length,
             itemBuilder: (context, index) {
               return WorkspaceItem(
-                  name: workspaceList[index].name,
-                  location: workspaceList[index].location,
-                  capacity: workspaceList[index].capacity,
-                  amentities: workspaceList[index].amenities.join(' , '));
+                workspaceModel: workspaceList[index],
+              );
             }));
   }
 }
