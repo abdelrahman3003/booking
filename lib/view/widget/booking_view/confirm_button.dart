@@ -26,11 +26,13 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           color: isDateTime ? Colors.deepPurpleAccent.shade200 : Colors.grey,
           onPressed: () {
             if (isDateTime) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const BookingDetails(),
-                  ));
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BookingDetails(),
+                ),
+                (route) => false,
+              );
             }
           },
         );

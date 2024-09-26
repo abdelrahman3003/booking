@@ -49,6 +49,8 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
   }
 
   chooseTime(String? value) {
+    print("===================$value");
+
     timeSlot = value;
     emit(WorkspaceTimeSuccess(time: value));
   }
@@ -56,6 +58,8 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
   dateAndTime() {
     if (dateSelcted != null && timeSlot != null) {
       emit(WorkspaceDateTimeSuccess(isDateTime: true));
+    } else {
+      emit(WorkspaceDateTimeSuccess(isDateTime: false));
     }
   }
 

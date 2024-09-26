@@ -11,6 +11,7 @@ class DropmenuTimeslots extends StatelessWidget {
     var cubit = context.read<WorkspaceCubit>();
     String? time;
     return BlocBuilder<WorkspaceCubit, WorkspaceState>(
+      buildWhen: (previous, current) => current is WorkspaceTimeSuccess,
       builder: (context, state) {
         if (state is WorkspaceTimeSuccess) {
           time = state.time;
