@@ -16,9 +16,12 @@ class DropmenuTimeslots extends StatelessWidget {
         if (state is WorkspaceTimeSuccess) {
           time = state.time;
         }
-        return DropdownButton<String>(
+        return DropdownButtonFormField<String>(
           hint: Text(
             time ?? 'Choose Time Slot',
+          ),
+          decoration: InputDecoration(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           ),
           items: cubit.timeSlots.map((String slot) {
             return DropdownMenuItem<String>(

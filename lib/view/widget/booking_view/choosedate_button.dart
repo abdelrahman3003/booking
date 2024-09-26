@@ -14,12 +14,24 @@ class ChoosedateButton extends StatelessWidget {
         if (state is WorkspaceDateSuccess) {
           date = state.date;
         }
-        return ElevatedButton(
-            child: Text(date ?? 'Choose Date'),
-            onPressed: () {
-              context.read<WorkspaceCubit>().pickDate(context);
-              context.read<WorkspaceCubit>().dateAndTime();
-            });
+        return TextFormField(
+          controller: TextEditingController(text: date ?? 'Choose Date'),
+          decoration: const InputDecoration(
+              suffixIcon: Icon(Icons.date_range),
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)))),
+          onTap: () {
+            context.read<WorkspaceCubit>().pickDate(context);
+            context.read<WorkspaceCubit>().dateAndTime();
+          },
+        );
+
+        // ElevatedButton(
+        //     child: Text(date ?? 'Choose Date'),
+        //     onPressed: () {
+        //       context.read<WorkspaceCubit>().pickDate(context);
+        //       context.read<WorkspaceCubit>().dateAndTime();
+        //     });
       },
     );
   }
