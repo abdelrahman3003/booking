@@ -1,9 +1,8 @@
-import 'package:booking/view/booking_view.dart';
+import 'package:booking/controller/worksapce/workspace_cubit.dart';
 import 'package:booking/view/workspaces_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'view/confirm_booking_view.dart';
 
 class Booking extends StatelessWidget {
   const Booking({super.key});
@@ -15,8 +14,13 @@ class Booking extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (_, child) {
-          return const MaterialApp(
-              debugShowCheckedModeBanner: false, home: ConfirmBookingView());
+          return BlocProvider(
+            create: (context) => WorkspaceCubit(),
+            child: const MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home: WorkspacesView(),
+            ),
+          );
         });
   }
 }
