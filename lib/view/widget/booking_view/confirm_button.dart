@@ -15,21 +15,25 @@ class ConfirmButton extends StatefulWidget {
 class _ConfirmButtonState extends State<ConfirmButton> {
   @override
   Widget build(BuildContext context) {
-    var cubit = context.read<WorkspaceCubit>();
-
-    return AppButton(
-      title: "Confirm",
-      color: cubit.pickedDate == null || cubit.timeSlot == null
-          ? Colors.grey
-          : Colors.green,
-      onPressed: () {
-        if (cubit.pickedDate != null || cubit.timeSlot != null) {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const BookingDetails(),
-              ));
+    bool isDateTime = false;
+    return BlocBuilder<WorkspaceCubit, WorkspaceState>(
+      builder: (context, state) {
+        if (state is WorkspaceDateTimeSuccess) {
+          isDateTime = state.isDateTime;
         }
+        return AppButton(
+          title: "Confirm",
+          color: isDateTime ? Colors.deepPurpleAccent.shade200 : Colors.grey,
+          onPressed: () {
+            if (isDateTime) {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BookingDetails(),
+                  ));
+            }
+          },
+        );
       },
     );
   }

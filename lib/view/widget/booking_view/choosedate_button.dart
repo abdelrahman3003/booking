@@ -3,35 +3,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../controller/worksapce/workspace_cubit.dart';
 
-class ChoosedateButton extends StatefulWidget {
+class ChoosedateButton extends StatelessWidget {
   const ChoosedateButton({super.key});
 
   @override
-  State<ChoosedateButton> createState() => _ChoosedateButtonState();
-}
-
-class _ChoosedateButtonState extends State<ChoosedateButton> {
-  @override
   Widget build(BuildContext context) {
-    var cubit = context.read<WorkspaceCubit>();
-
-    return ElevatedButton(
-      child: Text(cubit.pickedDate != null
-          ? cubit.pickedDate.toString()
-          : 'Choose Date'),
-      onPressed: () async {
-        DateTime? pickedDate = await showDatePicker(
-          context: context,
-          initialDate: DateTime.now(),
-          firstDate: DateTime.now(),
-          lastDate: DateTime(2101),
-        );
-        if (pickedDate != null) {
-          setState(() {
-            cubit.pickedDate =
-                "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
-          });
+    String? date;
+    return BlocBuilder<WorkspaceCubit, WorkspaceState>(
+      builder: (context, state) {
+        if (state is WorkspaceDateSuccess) {
+          date = state.date;
         }
+        return ElevatedButton(
+            child: Text(date ?? 'Choose Date'),
+            onPressed: () {
+              context.read<WorkspaceCubit>().pickDate(context);
+              context.read<WorkspaceCubit>().dateAndTime();
+            });
       },
     );
   }

@@ -6,8 +6,9 @@ import '../../../controller/worksapce/workspace_cubit.dart';
 import '../workspaces_view/workspace_item_row.dart';
 
 class BookingCard extends StatelessWidget {
-  const BookingCard({super.key});
-
+  const BookingCard({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     var cubit = context.read<WorkspaceCubit>();
@@ -22,7 +23,7 @@ class BookingCard extends StatelessWidget {
         children: [
           WorkspaceItemRow(
               title: "Worksapce", value: cubit.workspaceModel!.name),
-          WorkspaceItemRow(title: "Date", value: cubit.pickedDate!),
+          WorkspaceItemRow(title: "Date", value: cubit.dateSelcted!),
           WorkspaceItemRow(title: "Time", value: cubit.timeSlot!),
         ],
       ),

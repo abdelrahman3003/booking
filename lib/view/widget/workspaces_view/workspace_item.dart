@@ -24,19 +24,24 @@ class WorkspaceItem extends StatelessWidget {
             ));
       },
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 14.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         margin: const EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
-            color: const Color.fromARGB(255, 222, 213, 213)),
+            color: Colors.grey.shade300),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              workspaceModel.name,
-              style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
+            Center(
+              child: Text(
+                workspaceModel.name,
+                style: TextStyle(
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.deepPurpleAccent.shade100),
+              ),
             ),
-            SizedBox(height: 3.h),
+            SizedBox(height: 12.h),
             WorkspaceItemRow(title: "location", value: workspaceModel.location),
             WorkspaceItemRow(
                 title: "Capcity", value: "${workspaceModel.capacity}"),

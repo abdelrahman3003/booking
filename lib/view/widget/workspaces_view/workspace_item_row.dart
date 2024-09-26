@@ -11,7 +11,7 @@ class WorkspaceItemRow extends StatelessWidget {
       children: [
         Text(
           "$title : ",
-          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w400),
+          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w500),
         ),
         Text(
           value,

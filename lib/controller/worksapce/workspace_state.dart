@@ -13,4 +13,19 @@ final class WorkspaceSuccess extends WorkspaceState {
   WorkspaceSuccess({required this.workspaceList});
 }
 
+final class WorkspaceDateSuccess extends WorkspaceState {
+  final String? date;
+  WorkspaceDateSuccess({required this.date});
+}
+
+final class WorkspaceTimeSuccess extends WorkspaceState {
+  final String? time;
+
+  WorkspaceTimeSuccess({required this.time});
+}
+final class WorkspaceDateTimeSuccess extends WorkspaceState {
+  final bool isDateTime;
+
+  WorkspaceDateTimeSuccess({required this.isDateTime});
+}
 final class WorkspaceError extends WorkspaceState {}

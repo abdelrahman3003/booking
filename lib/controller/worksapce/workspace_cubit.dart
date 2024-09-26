@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import '../../data/data_source/workspace_data.dart';
@@ -12,7 +13,7 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
   }
   List<WorkspaceModel> workspaceList = [];
   WorkspaceModel? workspaceModel;
-  String? pickedDate;
+  String? dateSelcted;
   String? timeSlot;
   final List<String> timeSlots = [
     '9:00 AM - 11:00 AM',
@@ -32,9 +33,35 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
     emit(WorkspaceSuccess(workspaceList: workspaceList));
   }
 
+  pickDate(BuildContext context) async {
+    String? date;
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime.now(),
+      lastDate: DateTime(2101),
+    );
+    if (pickedDate != null) {
+      date = "${pickedDate.day}/${pickedDate.month}/${pickedDate.year}";
+    }
+    dateSelcted = date;
+    emit(WorkspaceDateSuccess(date: date));
+  }
+
+  chooseTime(String? value) {
+    timeSlot = value;
+    emit(WorkspaceTimeSuccess(time: value));
+  }
+
+  dateAndTime() {
+    if (dateSelcted != null && timeSlot != null) {
+      emit(WorkspaceDateTimeSuccess(isDateTime: true));
+    }
+  }
+
   @override
   Future<void> close() {
-    pickedDate = null;
+    dateSelcted = null;
     timeSlot = null;
     workspaceModel = null;
     return super.close();
