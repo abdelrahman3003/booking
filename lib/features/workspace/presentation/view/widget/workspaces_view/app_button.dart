@@ -3,10 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton(
-      {super.key,
-      required this.title,
-      this.onPressed,
-      this.color = Colors.green});
+      {super.key, required this.title, this.onPressed, required this.color});
   final String title;
   final Function()? onPressed;
   final Color color;

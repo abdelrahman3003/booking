@@ -1,3 +1,4 @@
+import 'package:booking/core/colors.dart';
 import 'package:booking/features/workspace/presentation/controller/worksapce/workspace_cubit.dart';
 import 'package:booking/core/navigation.dart';
 import 'package:booking/features/workspace/data/model/workspace_model.dart';
@@ -24,8 +25,7 @@ class WorkspaceItem extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
         margin: const EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: Colors.grey.shade300),
+            borderRadius: BorderRadius.circular(16), color: AppColors.grey300),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,7 +35,7 @@ class WorkspaceItem extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w500,
-                    color: Colors.deepPurpleAccent.shade100),
+                    color: AppColors.purple200),
               ),
             ),
             SizedBox(height: 12.h),

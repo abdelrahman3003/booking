@@ -1,3 +1,4 @@
+import 'package:booking/core/colors.dart';
 import 'package:booking/core/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +25,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
         }
         return AppButton(
           title: "Confirm",
-          color: isDateTime ? Colors.deepPurpleAccent.shade200 : Colors.grey,
+          color: isDateTime ? AppColors.purple200: AppColors.grey,
           onPressed: () {
             context.read<WorkspaceCubit>().formkey.currentState!.validate();
             if (isDateTime) {

@@ -1,4 +1,5 @@
 import 'package:booking/booking_app.dart';
+import 'package:booking/core/colors.dart';
 import 'package:booking/core/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,8 +13,8 @@ class BackButtonCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppButton(
+      color: AppColors.purple200,
       title: "Back To Home",
-      color: Colors.deepPurpleAccent.shade200,
       onPressed: () {
         context.pushAndRemoveUntil(const BookingApp());
         context.read<WorkspaceCubit>().close();
