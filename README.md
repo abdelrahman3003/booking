@@ -18,6 +18,6 @@ Screenshots
 ![768adb6b-cacc-4029-8591-b8a7a82e4019](https://github.com/user-attachments/assets/29e0a226-d27e-47b9-9a6f-7825d9ebc933)
 
 Tech Stack
-Flutter (Dart) - For building the cross-platform mobile application.
-flutter_screenUtil - for responsive and adaptive ui
-Cubit - For state management and navigation.
+- Flutter (Dart) - For building the cross-platform mobile application.
+- flutter_screenUtil - for responsive and adaptive ui
+- Cubit - For state management and navigation.
