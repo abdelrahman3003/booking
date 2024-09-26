@@ -1,16 +1,18 @@
-# booking
+Project Overview
+The Workspace Booking App allows users to browse through a list of available workspaces, view their details (location, capacity, amenities), and book a workspace for a specific date and time slot. This app is developed using Flutter, providing a smooth, cross-platform experience for both Android and iOS.
 
-A new Flutter project.
+Features
+- View a list of available workspaces.
+- Select and view details of a workspace.
+- Book a workspace for a specific date and time slot.
+- Receive confirmation of booking.
 
-## Getting Started
+Screenshots
+- workspaces list screen
+![5c12cd12-082e-4cd4-b80c-048d684406c5](https://github.com/user-attachments/assets/e8ff8f99-3470-4c4d-9c9b-c2afdc513ab5)
 
-This project is a starting point for a Flutter application.
+- booking screen
+![bdd34dd0-5e1e-48c1-a4b3-5ecc3da83417](https://github.com/user-attachments/assets/888f38a1-17be-4538-ac76-a79f112d856c)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- workspace recieved screen 
+![768adb6b-cacc-4029-8591-b8a7a82e4019](https://github.com/user-attachments/assets/29e0a226-d27e-47b9-9a6f-7825d9ebc933)
