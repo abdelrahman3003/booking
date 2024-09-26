@@ -1,5 +1,5 @@
-import 'package:booking/view/widget/workspaces_view/app_appbar.dart';
-import 'package:booking/view/widget/workspaces_view/workspace_view_body.dart';
+import 'package:booking/features/workspace/presentation/view/widget/workspaces_view/app_appbar.dart';
+import 'package:booking/features/workspace/presentation/view/widget/workspaces_view/workspace_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

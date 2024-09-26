@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import '../../data/data_source/workspace_data.dart';
-import '../../data/model/workspace_model.dart';
+import '../../../data/data_source/workspace_data.dart';
+import '../../../data/model/workspace_model.dart';
 
 part 'workspace_state.dart';
 

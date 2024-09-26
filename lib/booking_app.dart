@@ -1,5 +1,5 @@
-import 'package:booking/controller/worksapce/workspace_cubit.dart';
-import 'package:booking/view/workspaces_view.dart';
+import 'package:booking/features/workspace/presentation/controller/worksapce/workspace_cubit.dart';
+import 'package:booking/features/workspace/presentation/view/workspaces_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

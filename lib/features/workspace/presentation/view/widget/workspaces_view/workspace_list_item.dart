@@ -1,4 +1,4 @@
-import 'package:booking/data/model/workspace_model.dart';
+import 'package:booking/features/workspace/data/model/workspace_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

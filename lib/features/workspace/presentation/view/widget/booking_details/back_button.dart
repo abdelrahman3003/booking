@@ -1,4 +1,5 @@
 import 'package:booking/booking_app.dart';
+import 'package:booking/core/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,13 +15,7 @@ class BackButtonCard extends StatelessWidget {
       title: "Back To Home",
       color: Colors.deepPurpleAccent.shade200,
       onPressed: () {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  const BookingApp()), // The new page to navigate to
-          (Route<dynamic> route) => false, // Remove all previous routes
-        );
+        context.pushAndRemoveUntil(const BookingApp());
         context.read<WorkspaceCubit>().close();
       },
     );

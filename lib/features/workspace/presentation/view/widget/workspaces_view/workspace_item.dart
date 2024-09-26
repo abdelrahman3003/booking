@@ -1,7 +1,8 @@
-import 'package:booking/controller/worksapce/workspace_cubit.dart';
-import 'package:booking/data/model/workspace_model.dart';
-import 'package:booking/view/booking_view.dart';
-import 'package:booking/view/widget/workspaces_view/workspace_item_row.dart';
+import 'package:booking/features/workspace/presentation/controller/worksapce/workspace_cubit.dart';
+import 'package:booking/core/navigation.dart';
+import 'package:booking/features/workspace/data/model/workspace_model.dart';
+import 'package:booking/features/workspace/presentation/view/booking_view.dart';
+import 'package:booking/features/workspace/presentation/view/widget/workspaces_view/workspace_item_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,11 +18,7 @@ class WorkspaceItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read<WorkspaceCubit>().workspaceModel = workspaceModel;
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const BookingView(),
-            ));
+        context.push(const BookingView());
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),

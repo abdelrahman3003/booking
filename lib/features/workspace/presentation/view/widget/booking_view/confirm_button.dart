@@ -1,8 +1,9 @@
+import 'package:booking/core/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../controller/worksapce/workspace_cubit.dart';
-import '../../booking_details.dart';
+import '../../booking_details_view.dart';
 import '../workspaces_view/app_button.dart';
 
 class ConfirmButton extends StatefulWidget {
@@ -27,13 +28,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           onPressed: () {
             context.read<WorkspaceCubit>().formkey.currentState!.validate();
             if (isDateTime) {
-              Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BookingDetails(),
-                ),
-                (route) => false,
-              );
+              context.pushAndRemoveUntil(const BookingDetailsView());
             }
           },
         );
