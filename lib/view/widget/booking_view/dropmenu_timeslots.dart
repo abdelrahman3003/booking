@@ -17,9 +17,13 @@ class DropmenuTimeslots extends StatelessWidget {
           time = state.time;
         }
         return DropdownButtonFormField<String>(
-          hint: Text(
-            time ?? 'Choose Time Slot',
-          ),
+          hint: Text(time ?? 'Choose Time Slot'),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Please select a valid option";
+            }
+            return null;
+          },
           decoration: InputDecoration(
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
           ),

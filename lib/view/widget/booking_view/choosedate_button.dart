@@ -15,8 +15,15 @@ class ChoosedateButton extends StatelessWidget {
           date = state.date;
         }
         return TextFormField(
-          controller: TextEditingController(text: date ?? 'Choose Date'),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Please select a valid option";
+            }
+            return null;
+          },
+          controller: TextEditingController(text: date),
           decoration: const InputDecoration(
+              hintText: "Choose date",
               suffixIcon: Icon(Icons.date_range),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(12)))),
@@ -25,13 +32,6 @@ class ChoosedateButton extends StatelessWidget {
             context.read<WorkspaceCubit>().dateAndTime();
           },
         );
-
-        // ElevatedButton(
-        //     child: Text(date ?? 'Choose Date'),
-        //     onPressed: () {
-        //       context.read<WorkspaceCubit>().pickDate(context);
-        //       context.read<WorkspaceCubit>().dateAndTime();
-        //     });
       },
     );
   }

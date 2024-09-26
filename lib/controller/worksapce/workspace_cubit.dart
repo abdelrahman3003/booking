@@ -15,6 +15,7 @@ class WorkspaceCubit extends Cubit<WorkspaceState> {
   WorkspaceModel? workspaceModel;
   String? dateSelcted;
   String? timeSlot;
+  final formkey = GlobalKey<FormState>();
   final List<String> timeSlots = [
     '9:00 AM - 11:00 AM',
     '12:00 PM - 2:00 PM',

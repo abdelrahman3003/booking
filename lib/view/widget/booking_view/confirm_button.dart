@@ -25,6 +25,7 @@ class _ConfirmButtonState extends State<ConfirmButton> {
           title: "Confirm",
           color: isDateTime ? Colors.deepPurpleAccent.shade200 : Colors.grey,
           onPressed: () {
+            context.read<WorkspaceCubit>().formkey.currentState!.validate();
             if (isDateTime) {
               Navigator.pushAndRemoveUntil(
                 context,
